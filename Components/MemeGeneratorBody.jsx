@@ -1,5 +1,5 @@
 import React from 'react';
-import memeDataSrc from "../data.js"
+// import memeDataSrc from "../data.js"
 
 export default function MemeGeneratorBody(){
     // const [memeImg, setMemeImg] = React.useState("http://i.imgflip.com/1bij.jpg")
@@ -65,10 +65,10 @@ export default function MemeGeneratorBody(){
                     onChange={changeHandler}
                 />
                 <button className='form-button' onClick={getMemeImage}>Click to get image</button>
-                <img src={meme.imgSrc} className='meme-image'/>
+                {/* <img src={meme.imgSrc} className='meme-image'/> */}
             </div>
             <div className="meme">
-                <img src={meme.randomImage} className="meme--image" />
+                <img src={meme.imgSrc} className="meme-image" />
                 <h2 className="meme-text top">{meme.topText}</h2>
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>

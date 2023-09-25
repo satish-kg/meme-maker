@@ -8,7 +8,7 @@ body {
   height: 65px;
   display: flex;
   padding: 20px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   background-color: blueviolet;
   align-items: center;
   /* justify-items: flex-end */
@@ -34,6 +34,7 @@ body {
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap : 17px;
+  border: 10px solid orangered;
 }
 .form-input{
   font-family: "Karla", sans-serif;
@@ -53,10 +54,12 @@ body {
 
 .meme {
   position: relative;
+  border: 10px solid green
 }
 
-.meme-image{
+.meme-image {
   max-width: 100%;
+  border-radius: 3px;
 }
 
 .meme-text {
