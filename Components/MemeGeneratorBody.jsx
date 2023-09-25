@@ -73,7 +73,7 @@ export default function MemeGeneratorBody(){
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
             
-            <h1>Meme Generator 2.0</h1>
+            {/* <h1>Meme Generator 2.0</h1> */}
         </main>
     )
 }
