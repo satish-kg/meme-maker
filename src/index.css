@@ -4,15 +4,21 @@ body {
 }
 
 .header-logo{
-  width: 97.2%;
+  /* width: 97.2%;
   height: 65px;
   display: flex;
-  padding: 20px;
+  padding: 20px; */
   /* border: 2px solid red; */
-  background-color: blueviolet;
-  align-items: center;
+  /* background-color: blueviolet;
+  align-items: center; */
   /* justify-items: flex-end */
+  /* color: white; */
+  display: flex;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
   color: white;
+  padding: 20px;
 }
 .header-logo > img{
   width: 110px;
@@ -34,6 +40,7 @@ body {
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap : 17px;
+  margin-bottom: 17px;
   border: 10px solid orangered;
 }
 .form-input{
