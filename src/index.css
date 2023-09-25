@@ -25,6 +25,7 @@ body {
 }
 .header-subtitle{
   color : rgb(236, 243, 236);
+  font-style: italic;
   /* border: 2px solid white; */
   /* text-align-last: right; */
   /* margin-right: 6px; */
