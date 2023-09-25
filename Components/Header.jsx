@@ -7,5 +7,6 @@ export default function Header(){
             <h1 className="header-title">Meme Generator</h1>
             <h2 className="header-subtitle">to the right</h2>
         </div>
+
     )
 }

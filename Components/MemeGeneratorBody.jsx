@@ -10,16 +10,46 @@ export default function MemeGeneratorBody(){
         imgSrc: "http://i.imgflip.com/1bij.jpg"
     })
 
-    function getMemeImage (){
-        const memeData = memeDataSrc.data.memes
-        const randomNumber = Math.floor(Math.random() * memeData.length)
-        setMemeImg(prevMeme => {
-            return {
-              ...prevMeme,
-                imgSrc: memeData[randomNumber].url    //randomize image url through setState
-            }
-        })
+    const [allMemes, setAllMemes] = React.useState([])
+
+    React.useEffect(()=>{
+        async function getMemes(){
+            const res = await fetch ("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.memes)
+        }
+        getMemes()
+    },[])
+
+    function getMemeImage(){
+        const randomNumber = Math.floor(Math.random()*allMemes.length)
+        const url = allMemes[randomNumber].url
+        setMemeImg(prevMeme=>({
+            ...prevMeme,
+            imgSrc : url
+        }))
     }
+
+    function changeHandler(event){
+        const {name, value} = event.target
+        setMemeImg(prevMeme =>({
+            ...prevMeme,
+            [name]:value
+        }))
+    }
+
+
+
+    // function getMemeImage (){
+    //     const memeData = memeDataSrc.data.memes
+    //     const randomNumber = Math.floor(Math.random() * memeData.length)
+    //     setMemeImg(prevMeme => {
+    //         return {
+    //           ...prevMeme,
+    //             imgSrc: memeData[randomNumber].url    //randomize image url through setState
+    //         }
+    //     })
+    // }
 
     return(
         <main className="meme-generator-body">
@@ -30,7 +60,7 @@ export default function MemeGeneratorBody(){
                 <img src={meme.imgSrc} className='meme-image'/>
             </div>
             
-            <h1>Meme Generator</h1>
+            <h1>Meme Generator 2.0</h1>
         </main>
     )
 }
