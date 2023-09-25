@@ -54,10 +54,23 @@ export default function MemeGeneratorBody(){
     return(
         <main className="meme-generator-body">
             <div className="form">
-                <input type="text" placeholder="Input Upper Statement" className="form-input" />
-                <input type="text" placeholder='Input Lower Statement' className="form-input" />
+                <input type="text" placeholder="Input Upper Statement" className="form-input"
+                    name="topText"
+                    value={meme.topText}
+                    onChange={changeHandler}
+                />
+                <input type="text" placeholder='Input Lower Statement' className="form-input"
+                    name="bottomText"
+                    value={meme.bottomText}
+                    onChange={changeHandler}
+                />
                 <button className='form-button' onClick={getMemeImage}>Click to get image</button>
                 <img src={meme.imgSrc} className='meme-image'/>
+            </div>
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" />
+                <h2 className="meme-text top">{meme.topText}</h2>
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
             
             <h1>Meme Generator 2.0</h1>

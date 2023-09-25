@@ -50,6 +50,10 @@ body {
   cursor: pointer;
 }
 
+.meme {
+  position: relative;
+}
+
 .meme-image{
   max-width: 100%;
 }
