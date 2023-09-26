@@ -48,6 +48,10 @@ body {
   border-radius: 5px;
   border: 1px solid #D5D4D8;
   text-indent: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* border: 2px solid red; */
 }
 .form-button {
   grid-column: 1 / -1;
@@ -57,6 +61,8 @@ body {
   color: white;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .meme {
