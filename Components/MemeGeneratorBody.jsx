@@ -1,18 +1,17 @@
-import React from 'react';
-// import memeDataSrc from "../data.js"
+import React, {useState, useEffect} from 'react';
 
 export default function MemeGeneratorBody(){
     // const [memeImg, setMemeImg] = React.useState("http://i.imgflip.com/1bij.jpg")
 
-    const [meme, setMemeImg] = React.useState({
+    const [meme, setMemeImg] = useState({
         topText: "",
         bottomText: "",
         imgSrc: "http://i.imgflip.com/1bij.jpg"
     })
 
-    const [allMemes, setAllMemes] = React.useState([])
+    const [allMemes, setAllMemes] = useState([])
 
-    React.useEffect(()=>{
+    useEffect(()=>{
         async function getMemes(){
             const res = await fetch ("https://api.imgflip.com/get_memes")
             const data = await res.json()
@@ -38,22 +37,9 @@ export default function MemeGeneratorBody(){
         }))
     }
 
-
-
-    // function getMemeImage (){
-    //     const memeData = memeDataSrc.data.memes
-    //     const randomNumber = Math.floor(Math.random() * memeData.length)
-    //     setMemeImg(prevMeme => {
-    //         return {
-    //           ...prevMeme,
-    //             imgSrc: memeData[randomNumber].url    //randomize image url through setState
-    //         }
-    //     })
-    // }
-
     return(
         <main className="meme-generator-body">
-            <div className="form" style={{border:'2px solid red'}}>
+            <div className="form">
                 <input type="text" placeholder="Input Upper Statement" className="form-input"
                     name="topText"
                     value={meme.topText}
@@ -64,7 +50,7 @@ export default function MemeGeneratorBody(){
                     value={meme.bottomText}
                     onChange={changeHandler}
                 />
-                <button className='form-button' onClick={getMemeImage}>Click to get image</button>
+                <button className='form-button' onClick={getMemeImage}>Click to change template image</button>
                 {/* <img src={meme.imgSrc} className='meme-image'/> */}
             </div>
             <div className="meme">
@@ -72,8 +58,9 @@ export default function MemeGeneratorBody(){
                 <h2 className="meme-text top">{meme.topText}</h2>
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
-            
-            {/* <h1>Meme Generator 2.0</h1> */}
+            <div className='form-new'>
+                <button className='form-new-button'>Download the image</button>
+            </div>
         </main>
     )
 }
