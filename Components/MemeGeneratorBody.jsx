@@ -20,6 +20,55 @@ export default function MemeGeneratorBody(){
         getMemes()
     },[])
 
+    function downloadMeme() {
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+      
+        const image = new Image();
+        image.crossOrigin = "anonymous"; //avoiding cors issue - i tend to forget
+        image.src = meme.imgSrc;
+      
+        image.onload = () => {
+          canvas.width = image.width;
+          canvas.height = image.height;
+          
+          context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+          const fontSize = canvas.width / 10;
+          context.textAlign = "center";
+          context.fillStyle = "white";
+          context.font = `${fontSize}px Impact`;
+          context.strokeStyle = "black";
+          context.lineWidth = fontSize / 15;
+          
+          const textShadowOffset = fontSize / 30;
+          const drawShadow = (text, x, y) => {
+            context.lineWidth = textShadowOffset;
+            context.strokeText(text, x, y);
+          };
+          
+          const topText = meme.topText.toUpperCase();
+          const bottomText = meme.bottomText.toUpperCase();
+
+          const topTextX = canvas.width / 2;
+          const topTextY = fontSize + 10;
+          drawShadow(topText, topTextX, topTextY);
+          context.fillText(topText, topTextX, topTextY);
+
+          const bottomTextX = canvas.width / 2;
+          const bottomTextY = canvas.height - 20;
+          drawShadow(bottomText, bottomTextX, bottomTextY);
+          context.fillText(bottomText, bottomTextX, bottomTextY);
+
+          const link = document.createElement("a");
+          link.download = "Satish'sMeme.jpg";
+          link.href = canvas.toDataURL("image/jpeg");
+          link.click();
+        };
+      }
+      
+      
+
     function getMemeImage(){
         const randomNumber = Math.floor(Math.random()*allMemes.length)
         const url = allMemes[randomNumber].url
@@ -59,7 +108,7 @@ export default function MemeGeneratorBody(){
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
             <div className='form-new'>
-                <button className='form-new-button'>Download the image</button>
+                <button className='form-new-button' onClick={downloadMeme}>Download the image</button>
             </div>
         </main>
     )
