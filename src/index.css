@@ -45,6 +45,7 @@ body {
   grid-template: 40px 40px / 1fr 1fr;
   gap : 17px;
   margin-bottom: 17px;
+  padding : 10px;
   /* border: 10px solid orangered; */
 }
 .form-input{
@@ -73,8 +74,7 @@ body {
   display: grid;
   grid-template: 40px 1px / 1fr 1fr;
   gap : 17px;
-  /* margin-bottom: 17px; */
-  /* border: 10px solid orangered; */
+  padding: 10px;
 }
 .form-new-input{
   font-family: "Karla", sans-serif;
@@ -103,6 +103,7 @@ body {
   position: relative;
   /* border: 10px solid green; */
   width: fit-content;
+  padding: 10px;
 }
 
 .meme-image {

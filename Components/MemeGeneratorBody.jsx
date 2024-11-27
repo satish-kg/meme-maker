@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
 export default function MemeGeneratorBody(){
-    // const [memeImg, setMemeImg] = React.useState("http://i.imgflip.com/1bij.jpg")
 
     const [meme, setMemeImg] = useState({
         topText: "",
