@@ -53,7 +53,7 @@ export default function MemeGeneratorBody(){
 
     return(
         <main className="meme-generator-body">
-            <div className="form">
+            <div className="form" style={{border:'2px solid red'}}>
                 <input type="text" placeholder="Input Upper Statement" className="form-input"
                     name="topText"
                     value={meme.topText}
