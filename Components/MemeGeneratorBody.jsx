@@ -99,7 +99,6 @@ export default function MemeGeneratorBody(){
                     onChange={changeHandler}
                 />
                 <button className='form-button' onClick={getMemeImage}>Click to change template image</button>
-                {/* <img src={meme.imgSrc} className='meme-image'/> */}
             </div>
             <div className="meme">
                 <img src={meme.imgSrc} className="meme-image" />
