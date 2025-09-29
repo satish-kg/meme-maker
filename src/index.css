@@ -176,11 +176,10 @@ main.meme-generator-body {
   margin: 0 auto; /* centers the content horizontally */
 }
 
-.form,
+/* .form, */
 /* .form-new {
   padding: 1rem;
   max-width: 700px;
-  margin: 0 auto; /* centers form */
 } */
 
 .meme {
