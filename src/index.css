@@ -70,12 +70,12 @@ body {
   /* margin-left: 10px; */
   /* margin-right: 10px; */
 }
-.form-new{
+/* .form-new{
   display: grid;
   grid-template: 60px 1px / 1fr 1fr;
   gap : 17px;
   padding: 10px;
-}
+} */
 .form-new-input{
   font-family: "Karla", sans-serif;
   border-radius: 5px;
@@ -99,7 +99,7 @@ body {
   /* margin-right: 10px; */
 }
 
-.meme {
+/* .meme {
   position: relative;
   /* border: 10px solid green; */
   width: fit-content;
@@ -111,9 +111,9 @@ body {
   max-width: 100%;
   border-radius: 3px;
   margin-bottom: 10px;
-}
+} */
 
-.meme-text {
+/* .meme-text {
   position: absolute;
   width: 80%;
   text-align: center;
@@ -136,15 +136,15 @@ body {
       0 -2px 0 #000,
       -2px 0 0 #000,
       2px 2px 5px #000;
-}
+} */
 
-.bottom {
+/* .bottom {
   bottom: 0;
-}
+} */
 
-.top {
+/* .top {
   top: 0;
-}
+} */
 
 
 .new-gradient-background{
@@ -164,6 +164,57 @@ body {
   margin-right: 5px;
   padding: 20px;
 }
+
+.meme-generator-body {
+  padding: 0 1rem; /* horizontal padding for neatness */
+  max-width: 900px; /* keeps content centered and not too wide */
+  margin: 0 auto; /* centers the content horizontally */
+}
+
+.form,
+.form-new {
+  padding: 1rem;
+  max-width: 700px;
+  margin: 0 auto; /* centers form */
+}
+
+.meme {
+  position: relative;
+  margin: 0 auto; /* centers meme block */
+  padding: 1rem;
+  max-width: 100%;
+  height: auto; /* let image define height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.meme-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.meme-text {
+  position: absolute;
+  width: 90%; /* tighter for responsiveness */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 2.5rem); /* responsive font size */
+}
+
+.top {
+  top: 5%;
+}
+
+.bottom {
+  bottom: 5%;
+}
+
 
 .cutom-footer > img{
   width: 110px;
