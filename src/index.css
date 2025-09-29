@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html, body {
+  height: 100%;
   font-family: "Karla", sans-serif;
   margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main.meme-generator-body {
+  flex: 1; /* fills remaining space, pushes footer down */
 }
 
 .header-logo{
@@ -150,6 +160,7 @@ body {
 }
 
 .custom-footer{
+  margin-top: auto;
   display: flex;
   align-items: center;
   height: 65px;
