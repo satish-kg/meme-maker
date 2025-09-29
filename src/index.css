@@ -101,11 +101,10 @@ body {
 
 /* .meme {
   position: relative;
-  /* border: 10px solid green; */
   width: fit-content;
   padding: 10px;
   height: 55vh;
-}
+} */
 
 .meme-image {
   max-width: 100%;
